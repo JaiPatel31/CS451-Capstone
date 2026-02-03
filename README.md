@@ -88,7 +88,9 @@ http://localhost:8080/health
 # ⚛️ Run Frontend (Next.js) 
 From repo root:
 ```bash
-cd frontend npm install npm run dev 
+cd frontend
+npm install
+npm run dev
 ```
 Frontend runs at:
 ```
