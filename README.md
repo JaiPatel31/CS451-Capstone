@@ -113,7 +113,8 @@ Restart the Next.js dev server after creating this file.
 docker compose -f infra/docker-compose.yml down
 ```
 --- 
-# 🧪 Quick Startup Checklist Start services in this order: 
+# 🧪 Quick Startup Checklist
+Start services in this order:
 1. Start Postgres (Docker)
 2. Start Spring Boot backend
 3. Start Next.js frontend
