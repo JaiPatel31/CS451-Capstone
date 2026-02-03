@@ -8,10 +8,12 @@ Tech Stack:
 - Infra: Docker Compose
 
 # Members and Roles
+``` 
 Jai Patel (Full Stack Developer)
 Aymen Abbood
 Rand Brown
-Steven Turner 
+Steven Turner
+```  
 ---
 
 # ✅ Prerequisites 
