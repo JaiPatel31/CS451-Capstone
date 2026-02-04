@@ -1,4 +1,4 @@
-# Welcome to Team Storming ! ⛈️⛈️⛈️⛈️⛈️⛈️⛈️⛈️⛈️⛈️⛈️⛈️⛈️⛈️⛈️⛈️⛈️⛈️⛈️⛈️⛈️⛈️⛈️⛈️⛈️⛈️⛈️⛈️⛈️⛈️⛈️⛈️⛈️⛈️⛈️⛈️⛈️⛈️⛈️⛈️⛈️⛈️⛈️⛈️⛈️⛈️⛈️⛈️⛈️⛈️⛈️⛈️⛈️⛈️⛈️⛈️
+# Welcome to Team Storming ! ⛈️
 This project is a client banking portal capstone application.
 
 Tech Stack:
