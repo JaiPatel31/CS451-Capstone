@@ -21,9 +21,10 @@ backend/**/.classpath
 backend/**/.project
 backend/**/.settings/
 backend/**/.springBeans
-
+backend/bank-api/.env
 # Logs
 *.log
 
 # Docker volumes (optional, if you ever add local folders)
 **/data/
+
