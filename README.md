@@ -4,15 +4,17 @@ This project is a client banking portal capstone application.
 Tech Stack:
 - Frontend: Next.js + TypeScript + MUI
 - Backend: Spring Boot (Java)
-- Database: PostgreSQL (Docker)
+- Database: NeonDB, PostgreSQL (Docker)
 - Infra: Docker Compose
+- AI: Gemma 3 12B (local)
+- Server: Azure
 
 # Members and Roles
 ``` 
 Jai Patel (Full Stack Developer)
-Aymen Abbood
-Rand Brown
-Steven Turner
+Aymen Abbood (Project & Architecture Manager)
+Rand Brown (Full Stack Developer)
+Steven Turner (Front End Developer)
 ```  
 ---
 
