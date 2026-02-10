@@ -1,3 +1,6 @@
+"use client";
+
+import Link from "next/link";
 import { AppBar, Box, Button, Toolbar, Typography } from "@mui/material";
 
 export default function PublicNavbar() {
@@ -15,16 +18,31 @@ export default function PublicNavbar() {
               borderColor: "divider",
             }}
           />
-          <Typography variant="h6" fontWeight={700}>
+          <Typography
+            variant="h6"
+            fontWeight={700}
+            component={Link}
+            href="/"
+            sx={{ textDecoration: "none", color: "inherit" }}
+          >
             Forecast
           </Typography>
         </Box>
 
         <Box sx={{ flexGrow: 1 }} />
 
-        <Box sx={{ display: "flex", gap: 1 }}>
-          <Button color="inherit">Login</Button>
-          <Button variant="contained">Get Started</Button>
+        <Box sx={{ display: "flex", gap: 1, flexShrink: 0 }}>
+          <Button component={Link} href="/login" color="inherit">
+            Login
+          </Button>
+          <Button
+            component={Link}
+            href="/get-started"
+            variant="contained"
+            sx={{ minHeight: 44, minWidth: 140, whiteSpace: "nowrap", flexShrink: 0 }}
+          >
+            Get Started
+          </Button>
         </Box>
       </Toolbar>
     </AppBar>
