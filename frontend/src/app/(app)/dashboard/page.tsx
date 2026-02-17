@@ -1,35 +1,46 @@
 "use client";
 
 import * as React from "react";
-import { useRouter } from "next/navigation";
 import { Box, Button, Typography } from "@mui/material";
 
 export default function DashboardPage() {
-  const router = useRouter();
+    const [email, setEmail] = React.useState<string | null>(null);
 
-  React.useEffect(() => {
-    const token = localStorage.getItem("forecast_token");
-    if (!token) router.replace("/login");
-  }, [router]);
+    React.useEffect(() => {
+        async function loadUser() {
+            const res = await fetch("/api/auth/me");
 
-  function handleLogout() {
-    localStorage.removeItem("forecast_token");
-    router.replace("/login");
-  }
+            if (!res.ok) {
+                window.location.href = "/login";
+                return;
+            }
 
-  return (
-    <Box>
-      <Typography variant="h4" fontWeight={700}>
-        Dashboard
-      </Typography>
+            const data = await res.json();
+            setEmail(data.email);
+        }
 
-      <Typography sx={{ mt: 1 }}>
-        You are logged in (dummy auth).
-      </Typography>
+        loadUser();
+    }, []);
 
-      <Button variant="outlined" sx={{ mt: 3 }} onClick={handleLogout}>
-        Logout
-      </Button>
-    </Box>
-  );
+    async function handleLogout() {
+        await fetch("/api/auth/logout", { method: "POST" });
+        window.location.href = "/login";
+    }
+
+    return (
+        <Box sx={{ p: 3 }}>
+            <Typography variant="h4" fontWeight={700}>
+                Dashboard
+            </Typography>
+
+            <Typography sx={{ mt: 2 }}>
+                {email ? `Logged in as: ${email}` : "Loading..."}
+            </Typography>
+
+            <Button variant="outlined" sx={{ mt: 3 }} onClick={handleLogout}>
+                Logout
+            </Button>
+        </Box>
+    );
 }
+
