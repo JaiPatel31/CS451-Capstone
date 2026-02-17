@@ -87,8 +87,8 @@ export default function AuthNavbar() {
           </IconButton>
 
           <Menu anchorEl={anchorEl} open={open} onClose={handleMenuClose}>
-            <MenuItem component={Link} href="/profile" onClick={handleMenuClose}>
-              Profile
+            <MenuItem component={Link} href="/settings" onClick={handleMenuClose}>
+              Settings
             </MenuItem>
             <MenuItem onClick={handleLogout}>Logout</MenuItem>
           </Menu>
