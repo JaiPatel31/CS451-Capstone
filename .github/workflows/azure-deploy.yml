@@ -1,0 +1,26 @@
+name: Build and Deploy to Azure
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Checkout Github Action'
+        uses: actions/checkout@v4
+
+      - name: 'Log in to Azure'
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: 'forecast-financial'
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+          images: 'index.docker.io/${{ github.repository_owner }}/bank-api:${{ github.sha }}'
+          
+      - name: 'Build and push image'
+        run: |
+          docker build -t index.docker.io/${{ github.repository_owner }}/bank-api:${{ github.sha }} ./backend/bank-api
+          # Note: We aren't pushing to a registry yet, we are just telling Azure to use this build
